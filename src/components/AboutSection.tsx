@@ -41,8 +41,8 @@ export const AboutSection = () => {
           <div className="space-y-6">
             <p className="text-muted-foreground text-lg leading-relaxed">
               I'm a <span className="text-foreground font-medium">Software Engineer</span> with 
-              a deep passion for building robust backend systems. Currently pursuing my B.Tech 
-              in Computer Science at Graphic Era University, I've had the privilege of working 
+              a deep passion for building robust backend systems. A B.Tech graduate in Computer 
+              Science from Graphic Era University, I've had the privilege of working 
               with innovative startups.
             </p>
             
