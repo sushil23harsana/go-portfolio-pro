@@ -2,18 +2,8 @@ import { ExternalLink, BookOpen } from "lucide-react";
 
 const blogs = [
   {
-    title: "Understanding Go Concurrency",
-    description: "A deep dive into goroutines, channels, and concurrent patterns in Go for building scalable backend systems.",
-    link: "https://medium.com/@sushil23harsana",
-  },
-  {
-    title: "Building Async Workflows with Celery",
-    description: "How to implement background task processing and async workflows using Celery with Django.",
-    link: "https://medium.com/@sushil23harsana",
-  },
-  {
-    title: "API Gateway Migration: Django to Golang",
-    description: "Lessons learned from migrating a production API gateway to improve performance under high traffic.",
+    title: "Building Bittorrent Client from Scratch in Golang",
+    description: "A comprehensive guide to implementing a BitTorrent client from the ground up using Go, covering peer-to-peer networking, file handling, and the BitTorrent protocol.",
     link: "https://medium.com/@sushil23harsana",
   },
 ];
