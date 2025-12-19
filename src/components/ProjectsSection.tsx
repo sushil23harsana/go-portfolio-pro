@@ -1,30 +1,24 @@
-import { ExternalLink, Github, Folder } from "lucide-react";
+import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
+    title: "BitTorrent Client",
+    description: "Built a lightweight BitTorrent client from scratch in Go with peer-to-peer file sharing. Implemented concurrent downloads, piece-based transfer, and SHA-1 integrity verification. Focused on distributed systems fundamentals, network protocols, and Go concurrency.",
+    techStack: ["Go", "TCP/UDP", "SHA-1", "Concurrency"],
+    period: "Nov 2025 – Dec 2025",
+  },
+  {
     title: "CampusConnect",
-    description: "University Ecosystem Platform - Unified portal where students access campus opportunities using college-email SSO. Features student posts, alumni referrals, faculty research openings, and a pre-owned marketplace.",
-    techStack: ["Node.js", "FastAPI", "LangChain", "React"],
-    featured: true,
+    description: "Developed backend services for a university platform using college-email authentication. Designed APIs for posts, referrals, listings, and marketplace with modular backend design.",
+    techStack: ["Python", "FastAPI", "PostgreSQL"],
+    period: "Nov 2025",
   },
   {
-    title: "AI-Driven Personal Finance Manager",
-    description: "AI-powered finance system providing smart insights using RAG pipelines. Deployed modular microservices using Spring Boot and FastAPI for intelligent financial recommendations.",
-    techStack: ["FastAPI", "RAG", "LangChain", "Spring Boot", "Mistral"],
-    featured: true,
-  },
-  {
-    title: "Smart Contact Management System",
-    description: "Secure full-stack application with OAuth2 login, AWS S3 storage, and email-integrated contact management. Enterprise-grade security with Spring Security.",
-    techStack: ["Spring Boot", "Spring Security", "JPA", "AWS S3", "OAuth2"],
-    featured: false,
-  },
-  {
-    title: "AI Travel Assistant",
-    description: "Conversational travel assistant providing personalized suggestions with long-term memory persistence using Azure Cosmos DB for context-aware recommendations.",
-    techStack: ["FastAPI", "LangChain", "React", "Azure Cosmos DB"],
-    featured: false,
+    title: "AI-Assisted Personal Finance Manager",
+    description: "Built backend services for a finance analysis system that generates insights from user data using GenAI-assisted retrieval techniques. Implemented LLM-backed workflows for summarization and insight generation.",
+    techStack: ["FastAPI", "LangChain", "PostgreSQL", "GenAI"],
+    period: "Mar 2025 – Jul 2025",
   },
 ];
 
@@ -41,124 +35,47 @@ export const ProjectsSection = () => {
           </h2>
         </div>
 
-        {/* Featured Projects */}
-        <div className="space-y-24 mb-16">
-          {projects
-            .filter((p) => p.featured)
-            .map((project, index) => (
-              <div
-                key={project.title}
-                className={`relative grid lg:grid-cols-12 gap-4 items-center ${
-                  index % 2 === 1 ? "lg:text-right" : ""
-                }`}
-              >
-                {/* Project Image Placeholder */}
-                <div
-                  className={`lg:col-span-7 relative group ${
-                    index % 2 === 1 ? "lg:order-2 lg:col-start-6" : ""
-                  }`}
+        <div className="max-w-4xl mx-auto space-y-6">
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className="glass rounded-xl p-6 hover-lift hover-glow group"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <span className="text-sm text-muted-foreground font-mono">
+                    {project.period}
+                  </span>
+                </div>
+                <a
+                  href="https://github.com/sushil23harsana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 shrink-0"
                 >
-                  <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-card border border-border/50 shadow-card group-hover:border-primary/30 transition-all duration-500">
-                    <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-500" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Folder className="w-16 h-16 text-primary/30" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div
-                  className={`lg:col-span-6 lg:absolute ${
-                    index % 2 === 1 ? "lg:left-0" : "lg:right-0"
-                  } z-10`}
-                >
-                  <span className="font-mono text-primary text-sm">Featured Project</span>
-                  <h3 className="text-2xl font-bold mt-2 mb-4">{project.title}</h3>
-                  
-                  <div className="glass rounded-xl p-6 shadow-card mb-4">
-                    <p className="text-muted-foreground">{project.description}</p>
-                  </div>
-
-                  <div className={`flex flex-wrap gap-3 mb-4 ${index % 2 === 1 ? "lg:justify-end" : ""}`}>
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-sm font-mono text-primary/80"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className={`flex gap-4 ${index % 2 === 1 ? "lg:justify-end" : ""}`}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
+                  <Github className="w-5 h-5" />
+                </a>
               </div>
-            ))}
-        </div>
 
-        {/* Other Projects */}
-        <div className="text-center mb-8">
-          <h3 className="text-xl font-semibold text-muted-foreground">Other Noteworthy Projects</h3>
-        </div>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                {project.description}
+              </p>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects
-            .filter((p) => !p.featured)
-            .map((project) => (
-              <div
-                key={project.title}
-                className="glass rounded-2xl p-6 hover-lift hover-glow group"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <Folder className="w-10 h-10 text-primary" />
-                  <div className="flex gap-3">
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs font-mono text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 bg-primary/10 rounded-full text-xs font-mono text-primary"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-            ))}
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-12">

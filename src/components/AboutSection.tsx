@@ -40,22 +40,21 @@ export const AboutSection = () => {
           {/* About Text */}
           <div className="space-y-6">
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I'm a <span className="text-foreground font-medium">Software Engineer</span> with 
-              a deep passion for building robust backend systems. A B.Tech graduate in Computer 
-              Science from Graphic Era University, I've had the privilege of working 
-              with innovative startups.
+              Backend Engineer with hands-on experience building and maintaining backend systems 
+              using <span className="text-primary font-semibold">Golang</span> and{" "}
+              <span className="text-primary font-semibold">Python</span> in startup environments.
             </p>
             
             <p className="text-muted-foreground text-lg leading-relaxed">
-              At <span className="text-primary font-semibold">Resollect</span>, I built real-time 
-              lawyer operations platforms using Django and Celery. At{" "}
-              <span className="text-primary font-semibold">Seller Setu</span>, I migrated production 
-              API gateways from Django to Golang, significantly improving throughput.
+              Worked on API gateways, asynchronous task processing, message queues, and production 
+              debugging. Strong foundation in backend fundamentals, concurrency, and distributed 
+              systems, with a focus on writing reliable and scalable services.
             </p>
 
             <p className="text-muted-foreground text-lg leading-relaxed">
-              My expertise lies in designing distributed systems, implementing message queues 
-              with RabbitMQ, and creating high-performance APIs that handle millions of requests.
+              B.Tech in Computer Science from Graphic Era University Dehradun (2021-2025). 
+              Currently working at startups, taking ownership of backend features and collaborating 
+              directly with founders.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">
