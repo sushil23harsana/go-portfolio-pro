@@ -1,4 +1,5 @@
 import { ExternalLink, BookOpen } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const blogs = [
   {
@@ -9,8 +10,16 @@ const blogs = [
 ];
 
 export const BlogSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
-    <section id="blogs" className="py-24 relative">
+    <section
+      id="blogs"
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-24 relative transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
       <div className="container mx-auto px-6">

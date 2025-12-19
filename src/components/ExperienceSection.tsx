@@ -1,4 +1,5 @@
 import { Briefcase, Calendar } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const experiences = [
   {
@@ -28,8 +29,16 @@ const experiences = [
 ];
 
 export const ExperienceSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
-    <section id="experience" className="py-24 relative">
+    <section
+      id="experience"
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`py-24 relative transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
       <div className="container mx-auto px-6">
