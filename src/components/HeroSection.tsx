@@ -96,8 +96,7 @@ export const HeroSection = () => {
               Crafting scalable backend systems with{" "}
               <span className="text-primary font-semibold">Golang</span>,{" "}
               <span className="text-primary font-semibold">Django</span>, and{" "}
-              <span className="text-primary font-semibold">FastAPI</span>. 
-              Based in <span className="text-primary font-semibold"></span>.
+              <span className="text-primary font-semibold">FastAPI</span>.
             </p>
 
             {/* CTA Buttons */}
