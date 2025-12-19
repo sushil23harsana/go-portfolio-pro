@@ -50,7 +50,7 @@ export const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="sm" asChild>
-            <a href="/SushilHarsana_Resume.pdf" download>
+            <a href="https://drive.google.com/file/d/13neiMAyUrCQm2D0oXWjYfswH3OQFGEP0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               Resume
             </a>
           </Button>
@@ -82,7 +82,7 @@ export const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" size="sm" className="mt-2" asChild>
-              <a href="/SushilHarsana_Resume.pdf" download>
+              <a href="https://drive.google.com/file/d/13neiMAyUrCQm2D0oXWjYfswH3OQFGEP0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </Button>
