@@ -1,44 +1,27 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Award, Code2, Database, Server, Cloud } from "lucide-react";
 
-const skillCategories = [
-  {
-    title: "Backend",
-    skills: [
-      { name: "Golang", level: 90 },
-      { name: "Django", level: 85 },
-      { name: "FastAPI", level: 85 },
-      { name: "Spring Boot", level: 75 },
-      { name: "Java", level: 80 },
-    ],
-  },
-  {
-    title: "Frontend",
-    skills: [
-      { name: "React", level: 80 },
-      { name: "TypeScript", level: 75 },
-      { name: "HTML/CSS", level: 85 },
-    ],
-  },
-  {
-    title: "Databases",
-    skills: [
-      { name: "PostgreSQL", level: 90 },
-      { name: "MySQL", level: 85 },
-      { name: "MongoDB", level: 80 },
-      { name: "Redis", level: 75 },
-      { name: "DynamoDB", level: 70 },
-    ],
-  },
-  {
-    title: "DevOps & Tools",
-    skills: [
-      { name: "Docker", level: 85 },
-      { name: "Git", level: 90 },
-      { name: "Linux", level: 85 },
-      { name: "RabbitMQ", level: 80 },
-      { name: "AWS", level: 70 },
-    ],
-  },
+const coreSkills = [
+  { name: "Golang", icon: Code2 },
+  { name: "Python", icon: Code2 },
+  { name: "Django", icon: Server },
+  { name: "FastAPI", icon: Server },
+  { name: "Spring Boot", icon: Server },
+  { name: "PostgreSQL", icon: Database },
+  { name: "Redis", icon: Database },
+  { name: "Docker", icon: Cloud },
+  { name: "RabbitMQ", icon: Server },
+  { name: "AWS", icon: Cloud },
+  { name: "Git", icon: Code2 },
+  { name: "Linux", icon: Server },
+];
+
+const certifications = [
+  { name: "Java Full Stack Developer", icon: Award },
+  { name: "Generative AI Unleashed", icon: Award },
+  { name: "Goldman Sachs Engineering Virtual Program", icon: Award },
+  { name: "Tata Crucible Finalist", icon: Award },
+  { name: "Tech Team Lead - Designovation Hub", icon: Award },
 ];
 
 export const SkillsSection = () => {
@@ -55,62 +38,42 @@ export const SkillsSection = () => {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="font-mono text-primary text-sm">04. Skills</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
-            My <span className="text-gradient">Tech Stack</span>
+            Tech <span className="text-gradient">Stack</span>
           </h2>
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+            Backend engineer specializing in distributed systems and scalable architectures
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {skillCategories.map((category, categoryIndex) => (
+        {/* Skills Grid */}
+        <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto mb-12">
+          {coreSkills.map((skill) => (
             <div
-              key={category.title}
-              className="glass rounded-2xl p-6 hover-lift"
+              key={skill.name}
+              className="flex items-center gap-2 px-4 py-2 glass rounded-full hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group"
             >
-              <h3 className="text-xl font-bold mb-6 text-gradient">{category.title}</h3>
-              
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-muted-foreground text-sm font-mono">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: `${skill.level}%`,
-                          animationDelay: `${(categoryIndex * 5 + skillIndex) * 0.1}s`,
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <skill.icon className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium group-hover:text-primary transition-colors">
+                {skill.name}
+              </span>
             </div>
           ))}
         </div>
 
-        {/* Certifications */}
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold mb-8 text-muted-foreground">Certifications & Achievements</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              "Java Full Stack Developer",
-              "Generative AI Unleashed",
-              "Goldman Sachs Engineering Virtual Program",
-              "Tata Crucible Finalist",
-              "Tech Team Lead - Designovation Hub",
-            ].map((cert) => (
+        {/* Certifications - Compact */}
+        <div className="glass rounded-xl p-6 max-w-3xl mx-auto">
+          <h3 className="text-sm font-mono text-primary mb-4 text-center">Certifications & Achievements</h3>
+          <div className="flex flex-wrap justify-center gap-2">
+            {certifications.map((cert) => (
               <span
-                key={cert}
-                className="px-4 py-2 glass rounded-lg text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
+                key={cert.name}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-muted/50 rounded-md text-xs font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
               >
-                {cert}
+                <Award className="w-3 h-3" />
+                {cert.name}
               </span>
             ))}
           </div>

@@ -5,7 +5,7 @@ const blogs = [
   {
     title: "Building Bittorrent Client from Scratch in Golang",
     description: "A comprehensive guide to implementing a BitTorrent client from the ground up using Go, covering peer-to-peer networking, file handling, and the BitTorrent protocol.",
-    link: "https://medium.com/@sushil23harsana",
+    link: "https://medium.com/@sushil23harsana/building-a-bittorrent-client-from-scratch-understanding-it-properly-fedda56a8576",
   },
 ];
 
